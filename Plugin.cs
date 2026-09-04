@@ -1,10 +1,17 @@
-﻿using BepInEx;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using BepInEx;
 using BepInEx.Logging;
+using Comfort.Common;
+using EFT;
+using EFT.HealthSystem;
+using EFT.InventoryLogic;
 
 namespace SPTClientModExamples
 {
     // first string below is your plugin's GUID, it MUST be unique to any other mod. Read more about it in BepInEx docs. Be sure to update it if you copy this project.
-    [BepInPlugin("SPTClientModExamples.UniqueGUID", "SPTClientModExamples", "1.0.0")]
+    [BepInPlugin("ConcussionMovementMod.UniqueGUID", "ConcussionMovementMod", "1.0.0")]
     public class Plugin : BaseUnityPlugin
     {
         public static ManualLogSource LogSource;
@@ -14,8 +21,8 @@ namespace SPTClientModExamples
         {
             // save the Logger to public static field so we can use it elsewhere in the project
             LogSource = Logger;
-            LogSource.LogInfo("plugin loaded!");
-
+            this.GetOrAddComponent<MainPlayerManager>();
+            LogSource.LogInfo("Concussion Movement Mod ");
             // uncomment line(s) below to enable desired example patch, then press F6 to build the project
             // if this solution is properly placed in a YourSPTInstall/Development folder, the compiled plugin will automatically be copied into YourSPTInstall/BepInEx/plugins
             // new SimplePatch().Enable();
