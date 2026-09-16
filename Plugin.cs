@@ -1,31 +1,39 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using BepInEx;
+﻿using BepInEx;
+using BepInEx.Configuration;
 using BepInEx.Logging;
-using Comfort.Common;
-using EFT;
-using EFT.HealthSystem;
-using EFT.InventoryLogic;
 
-namespace SPTClientModExamples
+namespace ConcussionMovementMod
 {
     // first string below is your plugin's GUID, it MUST be unique to any other mod. Read more about it in BepInEx docs. Be sure to update it if you copy this project.
     [BepInPlugin("ConcussionMovementMod.UniqueGUID", "ConcussionMovementMod", "1.0.0")]
     public class Plugin : BaseUnityPlugin
     {
+        public static ModConfiguration Configuration;
         public static ManualLogSource LogSource;
 
         // BaseUnityPlugin inherits MonoBehaviour, so you can use base unity functions like Awake() and Update()
         private void Awake()
         {
-            // save the Logger to public static field so we can use it elsewhere in the project
             LogSource = Logger;
-            this.GetOrAddComponent<MainPlayerManager>();
+            
+            this.InitializeConfiguration();
+
+            this.gameObject.AddComponent<MainPlayerManager>();
+
             LogSource.LogInfo("Concussion Movement Mod ");
-            // uncomment line(s) below to enable desired example patch, then press F6 to build the project
-            // if this solution is properly placed in a YourSPTInstall/Development folder, the compiled plugin will automatically be copied into YourSPTInstall/BepInEx/plugins
-            // new SimplePatch().Enable();
+        }
+
+        private void InitializeConfiguration()
+        {
+            
+            Configuration = new ModConfiguration
+            {
+                SwayFrequency = Config.Bind("Debug", "Sway Frequency Coefficient", 1.5f),
+                SwayMaxAmplitude = Config.Bind("Debug", "Max Sway Amplitude", 100f),
+                ContusionDuration = Config.Bind("Debug", "Contusion Duration", 5f),
+                ContusionPainDuration = Config.Bind("Debug", "Contusion Pain Duration", 5f),
+                ContusionTremorDuration = Config.Bind("Debug", "Contusion Tremor Duration", 5f),
+            };
         }
     }
 }

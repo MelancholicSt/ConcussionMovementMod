@@ -2,13 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a0e899b2-edf4-4fbe-a7a7-b515b16e26a8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/EContusionForce.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MainPlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExamplePatches/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ExamplePatches/SimplePatch.cs" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/EContusionSeverity.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EffectHandlers/BaseBotEffectHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EffectHandlers/BaseEffectHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EffectHandlers/BasePlayerEffectHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EffectHandlers/ContusionEffect/BotContusionEffectHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EffectHandlers/ContusionEffect/EmptyContusionEffectHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/EffectHandlers/ContusionEffect/PlayerContusionEffectHandler.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ModConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/PlayerEffectsDispatcher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.ConcussionMovementMod/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.ConcussionMovementMod/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConcussionMovementMoD.sln.DotSettings.user" beforeDir="false" afterPath="$PROJECT_DIR$/ConcussionMovementMoD.sln.DotSettings.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConcussionMovementMod.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ConcussionMovementMod.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/EContusionForce.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MainPlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MainPlayerManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Plugin.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Plugin.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPTClientModExamples.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/ConcussionMovementMod.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SPTClientModExamples.sln" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,21 +28,40 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/EContusionForce.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/EffectHandlers/BaseBotEffectHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/EffectHandlers/BasePlayerEffectHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/MainPlayerManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/PlayerEffectsDispatcher.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/ILViewer/2eed3b62d13b4b96a01f082cc57402fa2200/a3/0024660a/02000005pdb5.il" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/03/62b03761/IBotGame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/07/56cc27d4/TarkovApplication.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/10/10436787/BallisticsCalculator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/11/50bb2f39/ICharacterController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/19/767273a9/LocalGame.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/1c/cabf3c8d/IPlayer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/2a/2c57fbdb/BotSpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/37/ff3741c0/BaseEventConsumer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/4a/b5aa938a/Player.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/4a/d94e789f/BotOwner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/4f/4e2a36cc/IHealthEffect.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/5f/a07d7c9c/GamePerson.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/70/13be9b65/MovementContext.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/8a/45d8583b/Throwable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/94/0946a6c3/NetworkHealthController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/9f/c1846c01/ActiveHealthController.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/9f/fa46269f/GameWorld.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/b5/ae7d75ce/IPlayersCollection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/c8/24d9b676/Grenade.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/cb/321be752/ObserverBridge.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/cb/649b3574/PlayerCharacterController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/cc/9db7a666/BaseHealthController`1.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/de/228f90aa/ClientGameWorld.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/e7/b3e6ba6f/HandlerEffect.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/f1/4eb29935/Effects.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3fcb74b0cda24c318240edad868bb64ff7b400/f4/bc16c330/BotMover.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/48b1db9873f04ce8b3bad0c383343f527640/b0/00b1b76c/Singleton`1.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/506781eeca3a40cda5f986327a26c14bf7c00/c2/ef7f3f6d/UniTask.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/66b3a3272a834ea6a4a86c9083b640f75600/1c/4994cf22/ModulePatch.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/9ee453a206a74e4f834021a60bd1ae22216c0/62/889b2e5e/CharacterController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
@@ -45,18 +73,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.completion",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="a0e899b2-edf4-4fbe-a7a7-b515b16e26a8" name="Changes" comment="" />
@@ -72,6 +101,11 @@
       <workItem from="1787984794474" duration="9271000" />
       <workItem from="1788169087482" duration="11747000" />
       <workItem from="1788265771778" duration="4020000" />
+      <workItem from="1788600183366" duration="11976000" />
+      <workItem from="1788879747908" duration="9313000" />
+      <workItem from="1789466944759" duration="4824000" />
+      <workItem from="1789503970278" duration="96000" />
+      <workItem from="1789504080945" duration="19573000" />
     </task>
     <servers />
   </component>
@@ -81,6 +115,17 @@
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />

@@ -4,7 +4,7 @@
     <TargetFramework>netstandard2.1</TargetFramework>
     <RootNamespace>ConcussionMovementMod</RootNamespace>
     <Nullable>disable</Nullable>
-    <Authors>SPT</Authors>
+    <Authors>SPT, Drainwek</Authors>
     <Copyright></Copyright>
     <AssemblyVersion>1.7.0</AssemblyVersion>
     <FileVersion>$(AssemblyVersion)</FileVersion>
@@ -13,6 +13,7 @@
     <LangVersion>latest</LangVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
+    <!-- УДАЛИЛИ CopyLocalLockFileAssemblies, чтобы игровые dll не копировались -->
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -54,6 +55,9 @@
     </Reference>
     <Reference Include="Comfort">
       <HintPath>..\..\EscapeFromTarkov_Data\Managed\Comfort.dll</HintPath>
+    </Reference>
+    <Reference Include="Dissonance">
+      <HintPath>..\..\EscapeFromTarkov_Data\Managed\DissonanceVoip.dll</HintPath>
     </Reference>
     <Reference Include="Comfort.Unity, Version=1.0.0.4, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -98,7 +102,25 @@
     </Reference>
   </ItemGroup>
 
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy &quot;$(TargetPath)&quot; &quot;$(ProjectDir)\..\..\BepInEx\plugins\$(TargetFileName)&quot;" />
+  <ItemGroup>
+    <!-- Добавили CopyLocal=true, чтобы во время сборки копировался ТОЛЬКО UniTask -->
+    <PackageReference Include="UniTask" Version="2.5.11" CopyLocal="true" />
+  </ItemGroup>
+
+  <Target Name="CopyToBepInEx" AfterTargets="Build">
+    <ItemGroup>
+      <!-- 1. Файлы самого мода (.dll, .pdb) -->
+      <FilesToCopy Include="$(TargetDir)$(TargetName).*" />
+
+      <!-- 2. Берем только файлы из установленных NuGet-пакетов, полностью игнорируя системную среду .NET -->
+      <FilesToCopy Include="%(RuntimeCopyLocalItems.FullPath)"
+                   Condition="'%(RuntimeCopyLocalItems.Extension)' == '.dll' And '%(RuntimeCopyLocalItems.NuGetPackageId)' != ''" />
+    </ItemGroup>
+
+    <!-- 3. Копируем строго в папку плагина -->
+    <Copy SourceFiles="@(FilesToCopy)"
+          DestinationFolder="$(ProjectDir)..\..\BepInEx\plugins\$(TargetName)\"
+          SkipUnchangedFiles="true" />
   </Target>
+
 </Project>
